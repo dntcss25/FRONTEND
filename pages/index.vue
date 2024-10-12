@@ -1,6 +1,7 @@
 <template>
-  <Tutorial/>
+  <Test/>
 </template>
+
 
 <script>
 export default {
