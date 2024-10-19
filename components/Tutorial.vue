@@ -8,7 +8,20 @@
       </a>
       <div class="mt-8 bg-white overflow-hidden shadow sm:rounded-lg p-6">
         <h2 class="text-2xl leading-7 font-semibold">
-          Welcome to your Nuxt Application
+          Welcome to BSIT4
+
+          HELLOOOOO
+          <template>
+            
+  <a-space wrap>
+    <a-button type="primary">Primary Button</a-button>
+    <a-button>Default Button</a-button>
+    <a-button type="dashed">Dashed Button</a-button>
+    <a-button type="text">Text Button</a-button>
+    <a-button type="link">Link Button</a-button>
+  </a-space>
+</template>
+
         </h2>
         <p class="mt-3 text-gray-600">
           We recommend you take a look at the <a href="https://nuxtjs.org" target="_blank" class="button--doc text-green-500 hover:underline">Nuxt Documentation</a>, whether you are new or have previous experience with the framework.<br>
