@@ -1,5 +1,5 @@
 <template>
-  <Tutorial/>
+  <HomeHeader/>
 </template>
 
 <script>
