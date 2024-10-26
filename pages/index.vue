@@ -1,5 +1,5 @@
 <template>
-  <HomeHeader/>
+  <AHeader/>
 </template>
 
 <script>

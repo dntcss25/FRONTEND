@@ -1,3 +1,3 @@
 <template>
-    <HomeHeader/>
+    <AHeader/>
 </template>
