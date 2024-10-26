@@ -3,7 +3,7 @@
 
         <a href="#" class="logo"> Logo ni Manoy</a>
         <nav class="nav-links">
-            <router-link to="/">Home</router-link>
+            <router-link to="/Home">Home</router-link>
             <router-link to="/Portfolio">Portfolio</router-link>
             <router-link to="/About">About</router-link>
             <router-link to="/Contact">Contact</router-link>
@@ -24,7 +24,7 @@
             /* Header Styles */
             header {
                 font-family: 'Poppins', sans-serif;
-                position: fixed;
+                position: sticky;
                 top: 0;
                 left: 0;
                 width: 100%;
