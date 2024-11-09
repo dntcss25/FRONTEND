@@ -1,11 +1,14 @@
 <template>
     <div>
+        <!-- <sidebar/> -->
         <a-table :dataSource="instructors" :columns="columns"></a-table>
     </div>
 </template>
 
 <script>
+import sidebar from '../components/sidebar.vue';
 export default {
+  components: { sidebar },
 data(){
     return {
     instructors: [],
