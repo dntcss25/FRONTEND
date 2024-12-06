@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who is Jean Louie?</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .left-section {
+            flex: 1;
+            padding-right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header {
+            font-family: 'Georgia', serif;
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            margin: 0;
+        }
+        .description {
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            color: white;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+        .underline {
+            border-bottom: 2px solid white;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .right-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .profile-photo {
+            width: 300px;  
+            height: 450px; 
+            border-radius: 50%; /* Change to oval shape */
+            background: url('https://scontent.fmnl9-5.fna.fbcdn.net/v/t39.30808-6/460100898_1850601265468954_3601210410476893465_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFxlElysSYr6Xe6_HhVdrHNs4ORzkBWu1yzg5HOQFa7XD9kjcuB2mkW6yMYZfchiBSZfmxzYUdkGT6mcBv5rLsJ&_nc_ohc=bbOmNm0daYMQ7kNvgFFwOVM&_nc_zt=23&_nc_ht=scontent.fmnl9-5.fna&_nc_gid=ARBR2i_5gHkCghTSBUIgWVS&oh=00_AYARUADYhQAe6sHKBZv93-TJTcohRzAF7q0HjxCdN1LMPg&oe=675913C7') no-repeat center center; 
+            background-size: cover;
+            box-shadow: 0 0 20px rgba(255, 165, 0, 0.7); /* Add a glow effect */
+        }
+        .bottom-navigation {
+            background-color: white;
+            color: black;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+        }
+        .nav-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.2s, color 0.2s; /* Add transition for smooth effect */
+        }
+        .nav-icon {
+            font-size: 24px; 
+        }
+        .nav-label {
+            font-size: 14px;
+        }
+        /* Hover effects */
+        .nav-button:hover {
+            transform: scale(1.1); /* Scale up the button */
+            color: #007BFF; /* Change text color on hover */
+        }
+        /* Active button styles */
+        .active {
+            background-color: #007BFF; /* Change background color */
+            color: white; /* Change text color */
+            border-radius: 5px; /* Optional: add rounded corners */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="left-section">
+            <h1 class="header">Who is Jean Louie?</h1>
+            <p class="description">
+                A 4th-year IT student passionate about technology, who loves singing and stays active by playing basketball to keep balanced and motivated.
+            </p>
+            <div class="underline"></div>
+        </div>
+        <div class="right-section">
+            <div class="profile-photo"></div>
+        </div>
+    </div>
+
+    <div class="bottom-navigation">
+        <a href="Home.html" class="nav-button">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="About.html" class="nav-button active">
+            <span class="nav-icon">ℹ️</span>
+            <span class="nav-label">About</span>
+        </a>
+        <a href="Hobbies.html" class="nav-button">
+            <span class="nav-icon">🧩</span>
+            <span class="nav-label">Hobbies</span>
+        </a>
+        <a href="Contact.html" class="nav-button">
+            <span class="nav-icon">📞</span>
+            <span class="nav-label">Contact</span>
+        </a>
+    </div>
+
+</body>
+</html>
