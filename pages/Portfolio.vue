@@ -1,8 +1,14 @@
 <template>
   <a-layout>
     <div class="page-container">
+      <a-input-search
+        v-model:value="searchQuery"
+        placeholder="Search cards..."
+        style="margin-bottom: 16px;"
+        @search="onSearch"
+      />
       <div class="grid-container">
-        <a-card v-for="(item, index) in cardItems" :key="index" hoverable class="grid-item">
+        <a-card v-for="(item, index) in filteredCardItems" :key="index" hoverable class="grid-item">
           <template #cover>
             <img :alt="item.title" :src="item.imageUrl" />
           </template>
@@ -16,8 +22,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { SearchOutlined } from '@ant-design/icons-vue';
 import IMAGE from '@/Images/IMAGE.jpg';
+
+const searchQuery = ref('');
 
 const cardItems = ref([
   { title: 'Michael Angelo Alba', imageUrl: IMAGE },
@@ -40,8 +49,18 @@ const cardItems = ref([
   { title: 'Michael Angelo Alba', imageUrl: IMAGE },
   { title: 'Michael Angelo Alba', imageUrl: IMAGE },
   { title: 'Michael Angelo Alba', imageUrl: IMAGE },
-
 ]);
+
+const filteredCardItems = computed(() => {
+  if (!searchQuery.value) return cardItems.value;
+  return cardItems.value.filter(item => 
+    item.title.toLowerCase().includes(searchQuery.value.toLowerCase())
+  );
+});
+
+const onSearch = (value) => {
+  searchQuery.value = value;
+};
 </script>
 
 <style scoped>
@@ -58,6 +77,12 @@ const cardItems = ref([
 
 .grid-item {
   width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .ant-card-meta-description {
