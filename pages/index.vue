@@ -1,33 +1,49 @@
 <template>
   <div>
-      <AHeader />
+    <!-- Header Component -->
+    <AHeader />
 
-      <main class="container">
-          <div class="hero">
-              <div class="hero-content">
-                  <h1>
-                      <span class="smart">SMART</span>
-                      <span class="collaboration">Collaboration</span>
-                  </h1>
-                  <p>Featuring the work of all 4th year BSIT student from SPIST for the 2024-2025 academic year.</p>
-                  <a href="#" class="cta-button">Get Started <i class="fas fa-arrow-right"></i></a>
-              </div>
-              <div class="hero-image">
-                  <img src="@/Images/space.png" alt="Robot with yellow helmet" width="500" height="600">
-              </div>
-          </div>
-      </main>
-
-      <div class="social-links">
-          <a href="#"><i class="phone"></i></a>
-          <a href="#"><i class="envelope"></i></a>
-          <a href="#"><i class="instagram"></i></a>
-          <a href="#"><i class="facebook"></i></a>
+    <main class="container">
+      <div class="hero">
+        <div class="hero-content">
+          <h1>
+            <span class="smart">SMART</span>
+            <span class="collaboration">Collaboration</span>
+          </h1>
+          <p>Featuring the work of all 4th year BSIT students from SPIST for the 2024-2025 academic year.</p>
+          <a href="#" class="cta-button">Get Started <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-image">
+          <img src="@/Images/space.png" alt="Robot with yellow helmet" width="500" height="600" />
+        </div>
       </div>
+    </main>
 
-      <AFooter />
+    <!-- Social Links -->
+    <div class="social-links">
+      <a href="#"><i class="phone"></i></a>
+      <a href="#"><i class="envelope"></i></a>
+      <a href="#"><i class="instagram"></i></a>
+      <a href="#"><i class="facebook"></i></a>
+    </div>
+
+    <!-- Footer Component -->
+    <AFooter />
   </div>
 </template>
+
+<script>
+import AHeader from '@/components/AHeader.vue';
+import AFooter from '@/components/AFooter.vue';
+
+export default {
+  name: 'App',
+  components: {
+    AHeader,
+    AFooter
+  }
+};
+</script>
 
 <style>
 * {
@@ -113,7 +129,7 @@ h1 {
 
 .cta-button {
   display: inline-block;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 0.75rem 1.5rem;
   text-decoration: none;
@@ -142,23 +158,23 @@ h1 {
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero {
-      flex-direction: column;
-      text-align: center;
+    flex-direction: column;
+    text-align: center;
   }
 
   .hero-image {
-      margin-top: 2rem;
+    margin-top: 2rem;
   }
 
   .social-links {
-      position: static;
-      flex-direction: row;
-      justify-content: center;
-      margin-top: 2rem;
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
   }
 
   nav {
-      display: none;
+    display: none;
   }
 }
 </style>
