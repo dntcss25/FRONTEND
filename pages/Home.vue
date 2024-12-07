@@ -3,11 +3,6 @@
         <AHeader />
 
         <main>
-            <slot>
-                <h1>HELLO WORLD!</h1>
-                <h1>HELLO WORLD!</h1>
-                <h1>HELLO WORLD!</h1>
-            </slot>
         </main>
 
         <AFooter />
@@ -15,11 +10,21 @@
 </template>
 
 <style>
-main {
-    padding: 20px;
-    margin: 1rem;
-    width: 100%;
-    text-align: center;
-    min-height: 100vh;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 </style>

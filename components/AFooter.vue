@@ -1,48 +1,21 @@
 <template>
     <footer>
-        <div class="footer-top">
-           
-                <p>@CarlitoUnaLoko2428</p>
-            
-        </div>
-
-        <div class="footer-bottom">
-            <p> Opportunities Don't Happen, <span class="">You Create Them.</span></p>
+        <div class="container">
+            <p>&copy; 2024</p>
+            <p>BSIT | SPIST</p>
         </div>
 
         <style>
+            /* Footer */
             footer {
-                background: rgb(92, 92, 92);
+                background-color: #f9f9f9;
+                padding: 1rem 0;
             }
 
-            .footer-top {
-                margin: 0;
-            }
-
-            .footer-top{
+            footer .container {
                 display: flex;
-                justify-content: center;
-                list-style-type: none;
-            }
-
-            .footer-top p {
-                font-size: 0.8rem;
-            }
-
-            .footer-top p:hover {
-                opacity: 1;
-            }
-
-            .footer-bottom {
-                background-color: darkgreen;
-                padding: 10px;
-                text-align: center;
-            }
-
-            .footer-bottom p {
-                color: white;
-                font-size: 1rem;
-                font-weight: 600;
+                justify-content: space-between;
+                align-items: center;
             }
         </style>
     </footer>
