@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: gray;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-y: scroll;
+        }
+
+        header, footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            position: fixed;
+            left: 0;
+            z-index: 1000;
+        }
+
+        header {
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 2px -2px gray;
+        }
+
+        footer {
+            bottom: 0;
+            text-align: center;
+        }
+
+        .header-title {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .sidebar {
+            width: 250px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background-color: #222;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            z-index: 2000; 
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .profile h2 {
+            color: white;
+            font-size: 18px;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #333;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .sidebar a:hover {
+            background-color: #444;
+        }
+
+        .content {
+            margin-top: 60px; 
+            margin-left: 270px; 
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hobby {
+            margin-bottom: 20px;
+        }
+
+        .hobby img {
+            width: 200px;
+            height: auto;
+            display: block;
+            margin: 5px auto;
+        }
+
+        .back-button {
+            margin-top: 20px;
+        }
+
+        .back-button button {
+            background-color: #0c80fc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button button:hover {
+            background-color: #0a6bce;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="sidebar">
+        <div class="profile">
+            <img src="me.jpg" alt="Profile Picture">
+            <h2>Aaron Jay</h2>
+        </div>
+        <a href="home.html">🏠 Home</a>
+        <a href="about me.html">👤 About Me</a>
+        <a href="contact.html">📞 Contact</a>
+    </div>
+
+    
+    <header>
+        <div class="header-title">ABOUT ME</div>
+    </header>
+
+        
+    <div class="content">
+        <h1>About Me</h1>
+        <p>
+            My name is <b>Aaron Jay T Ongca</b>. I am <b>22 years old</b> and currently a <b>BSIT student</b>.
+        </p>
+        <p>My hobbies are:</p>
+
+        <div class="hobby">
+            <b>Playing basketball</b>
+            <img src="basketball.jpg" alt="Playing Basketball">
+        </div>
+
+        <div class="hobby">
+            <b>Drawing</b>
+            <img src="drawing.jpg" alt="Drawing">
+        </div>
+
+        <div class="hobby">
+            <b>Playing online games</b>
+            <img src="online_games.jfif" alt="Playing Online Games">
+        </div>
+
+    <footer>
+        <p>Aaron Jay Ongca 2024</p>
+    </footer>
+</body>
+</html>

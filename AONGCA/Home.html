@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: grey; 
+            display: flex;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            left: 0;
+            width: 100%;
+            box-sizing: border-box; 
+        }
+        header {
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            padding: 10px 20px;
+            box-shadow: 0 4px 2px -2px gray;
+        }
+        .logo {
+            position: absolute;
+            left: 20px; 
+        }
+        footer {
+            bottom: 0;
+            text-align: center;
+            padding: 10px;
+        }
+        .header-title {
+            font-size: 24px;
+            margin: 0;
+        }
+        /* Centering content */
+        .content {
+            margin-top: 80px; 
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-left: 250px; 
+            text-align: center;
+        }
+        .content img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        /* Sidebar styling */
+        .sidebar {
+            width: 250px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background-color: #222;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        .profile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .profile h2 {
+            color: white;
+            font-size: 18px;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #333;
+            border-radius: 5px;
+        }
+        .sidebar a:hover {
+            background-color: #444;
+        }
+        .sidebar i {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+        <div class="header-title"></div>
+    </header>
+
+    <div class="sidebar">
+        <div class="profile">
+            <img src="me.jpg" alt="Profile Picture">
+            <h2>Aaron Jay</h2>
+        </div>
+        <a href="Home.html"><i>🏠</i> Home</a>
+        <a href="about me.html"><i>👤</i> About Me</a>
+        <a href="contact.html"><i>📞</i> Contact</a>
+    </div>
+
+    <div class="content">
+        <img src="me.jpg" alt="Profile Picture">
+        <h1>Welcome to My Profile</h1>
+        
+    </div>
+
+    <footer>
+        <p>Aaron Jay Ongca 2024</p>
+    </footer>
+</body>
+</html>
