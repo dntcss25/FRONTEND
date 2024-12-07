@@ -1,236 +1,180 @@
 <template>
-  <div class="container">
-	<div class="screen">
-		<div class="screen__content">
-			<form  class="login" @submit.prevent="userLogin" >
-				<div class="login__field">
-          <img src="logo.png" alt="">
-					<i class="login__icon fas fa-user"></i>
-					<input type="text" v-model="username" class="login__input" placeholder="Username" required>
-				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-lock"></i>
-					<input type="password" v-model="password" class="login__input" placeholder="Password" required>
-				</div>
-				<button class="button login__submit">
-					<span class="button__text">Log In Now</span>
-					<i class="button__icon fas fa-chevron-right"></i>
-				</button>				
-			</form>
-			<div class="social-login">
-				<div class="social-icons">
-					<a href="#" class="social-login__icon fab fa-instagram"></a>
-					<a href="#" class="social-login__icon fab fa-facebook"></a>
-					<a href="#" class="social-login__icon fab fa-twitter"></a>
-				</div>
-			</div>
+	<div>
+	  <!-- Header Component -->
+	  <AHeader />
+  
+	  <main class="container">
+		<div class="hero">
+		  <div class="hero-content">
+			<h1>
+			  <span class="smart">SMART</span>
+			  <span class="collaboration">Collaboration</span>
+			</h1>
+			<p>Featuring the work of all 4th year BSIT students from SPIST for the 2024-2025 academic year.</p>
+			<a href="#" class="cta-button">Get Started <i class="fas fa-arrow-right"></i></a>
+		  </div>
+		  <div class="hero-image">
+			<img src="@/Images/space.png" alt="Robot with yellow helmet" width="500" height="600" />
+		  </div>
 		</div>
-		<div class="screen__background">
-			<span class="screen__background__shape screen__background__shape4"></span>
-			<span class="screen__background__shape screen__background__shape3"></span>		
-			<span class="screen__background__shape screen__background__shape2"></span>
-			<span class="screen__background__shape screen__background__shape1"></span>
-		</div>		
+	  </main>
+  
+	  <!-- Social Links -->
+	  <div class="social-links">
+		<a href="#"><i class="phone"></i></a>
+		<a href="#"><i class="envelope"></i></a>
+		<a href="#"><i class="instagram"></i></a>
+		<a href="#"><i class="facebook"></i></a>
+	  </div>
+  
+	  <!-- Footer Component -->
+	  <AFooter />
 	</div>
-</div>
   </template>
   
   <script>
-	export default {
-	// middleware: 'guest',
-	data() {
-    return {
-      username: '',
-      password: '',
-      error: null
-    }
-  },
-  methods: {
-    async userLogin() {
-		try {
-			console.log('login :>> ');
-			const login = await this.$auth.loginWith('local', {
-				data: {
-					username: this.username, 
-					password: this.password
-				}
-			})
-			console.log('loginWith :>> ');
-			if (login){
-				await this.$auth.setUser({
-					username: this.username,
-					password: this.password
-				})
-				this.$router.push('/instructors')
-			}
-		}
-		catch (error) {
-			this.$message.error('Login failed. Please check your credentials.')
-		}
-      } 
-    }
-}
+  import AHeader from '@/components/AHeader.vue';
+  import AFooter from '@/components/AFooter.vue';
+  
+  export default {
+	name: 'App',
+	components: {
+	  AHeader,
+	  AFooter
+	}
+  };
   </script>
   
   <style>
-  
-  @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
-
-* {
-	box-sizing: border-box;
+  * {
 	margin: 0;
-	padding: 0;	
-	font-family: Raleway, sans-serif;
-}
-
-body {
-	background: linear-gradient(90deg, #071C42, #165bb0);		
-}
-
-.container {
+	padding: 0;
+	box-sizing: border-box;
+  }
+  
+  body {
+	font-family: 'Roboto', sans-serif;
+	line-height: 1.6;
+	color: #333;
+  }
+  
+  .container {
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+  }
+  
+  /* Social Links */
+  .social-links {
+	position: fixed;
+	right: 2rem;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+  }
+  
+  .social-links a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 100vh;
-}
-
-.screen {		
-	background: linear-gradient(90deg, #071C42, #165bb0);		
-	position: relative;	
-	height: 600px;
-	width: 360px;	
-	box-shadow: 0px 0px 24px #152039;
-}
-
-.screen__content {
-	z-index: 1;
-	position: relative;	
-	height: 100%;
-}
-
-.screen__background {		
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 0;
-	-webkit-clip-path: inset(0 0 0 0);
-	clip-path: inset(0 0 0 0);	
-}
-
-.screen__background__shape {
-	transform: rotate(45deg);
-	position: absolute;
-}
-
-.screen__background__shape1 {
-	height: 520px;
-	width: 520px;
-	background: #FFF;	
-	top: -50px;
-	right: 120px;	
-	border-radius: 0 72px 0 0;
-}
-
-.screen__background__shape2 {
-	height: 220px;
-	width: 220px;
-	background: #165bb0;	
-	top: -172px;
-	right: 0;	
-	border-radius: 32px;
-}
-
-.screen__background__shape3 {
-	height: 540px;
-	width: 190px;
-	background: linear-gradient(270deg, #165bb0, #071C42);
-	top: -24px;
-	right: 0;	
-	border-radius: 32px;
-}
-
-.screen__background__shape4 {
-	height: 400px;
-	width: 200px;
-	background: #165bb0;	
-	top: 420px;
-	right: 50px;	
-	border-radius: 60px;
-}
-
-.login {
-	width: 320px;
-	padding: 30px;
-	padding-top: 60px;
-}
-
-.login__field {
-	padding: 20px 0px;
-	position: relative;
-}
-
-.login__field img {
-  display: block;
-  width: 60px;
-	padding: 20px 0px;	
-	position: relative;	
-}
-
-.login__icon {
-	position: absolute;
-	top: 30px;
-	color: #4586d4;
-}
-
-.login__input {
-	border: none;
-	border-bottom: 2px solid #D1D1D4;
-	background: none;
-	padding: 10px;
-	padding-left: 24px;
-	font-weight: 700;
-	width: 75%;
-	transition: .2s;
-}
-
-.login__input:active,
-.login__input:focus,
-.login__input:hover {
-	outline: none;
-	border-bottom-color: #4586d4;
-}
-
-.login__submit {
-	background: #fff;
-	font-size: 14px;
-	margin-top: 30px;
-	padding: 16px 20px;
-	border-radius: 26px;
-	border: 1px solid #D4D3E8;
-	text-transform: uppercase;
-	font-weight: 700;
+	width: 40px;
+	height: 40px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 50%;
+	color: #333;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
+  }
+  
+  .social-links a:hover {
+	background-color: #f0f0f0;
+  }
+  
+  /* Hero Section */
+  .hero {
 	display: flex;
 	align-items: center;
-	width: 100%;
-	color: #0b4790;
-	box-shadow: 0px 2px 2px #165bb0;
-	cursor: pointer;
-	transition: .2s;
-}
-
-.login__submit:active,
-.login__submit:focus,
-.login__submit:hover {
-	border-color: #165bb0;
-	outline: none;
-}
-
-.button__icon {
-	font-size: 24px;
-	margin-left: auto;
-	color: #165bb0;
-}
-
-</style>
+	justify-content: space-between;
+	padding: 4rem 0;
+  }
+  
+  .hero-content {
+	flex: 1;
+  }
+  
+  h1 {
+	margin-bottom: 1rem;
+  }
+  
+  .smart {
+	display: block;
+	font-size: 4rem;
+	font-weight: bold;
+	letter-spacing: 0.2em;
+  }
+  
+  .collaboration {
+	display: block;
+	font-family: 'Playfair Display', serif;
+	font-size: 3rem;
+  }
+  
+  .hero p {
+	max-width: 500px;
+	margin-bottom: 2rem;
+  }
+  
+  .cta-button {
+	display: inline-block;
+	background-color: #4caf50;
+	color: white;
+	padding: 0.75rem 1.5rem;
+	text-decoration: none;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+	background-color: #45a049;
+  }
+  
+  .cta-button i {
+	margin-left: 0.5rem;
+  }
+  
+  .hero-image {
+	flex: 1;
+	text-align: right;
+  }
+  
+  .hero-image img {
+	max-width: 100%;
+	height: auto;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+	.hero {
+	  flex-direction: column;
+	  text-align: center;
+	}
+  
+	.hero-image {
+	  margin-top: 2rem;
+	}
+  
+	.social-links {
+	  position: static;
+	  flex-direction: row;
+	  justify-content: center;
+	  margin-top: 2rem;
+	}
+  
+	nav {
+	  display: none;
+	}
+  }
+  </style>

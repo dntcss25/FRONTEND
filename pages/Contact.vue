@@ -1,4 +1,7 @@
 <template>
+  <div>
+    <AHeader />
+    <main>
     <a-row>
       <a-col span="8">
         <p>Get in Touch with us:</p>
@@ -31,6 +34,9 @@
       </a-button>
     </a-col>
     </a-row>
+  </main>
+    <AFooter />
+  </div>
   </template>
   <style>
   .Submitbutton{
@@ -43,3 +49,4 @@
     font-weight: bold;
   }
 </style>
+
