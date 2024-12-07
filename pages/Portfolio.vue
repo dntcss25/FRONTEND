@@ -1,5 +1,7 @@
 <template>
+  
   <a-layout>
+    <AHeader />
     <div class="page-container">
       <a-input-search
         v-model:value="searchQuery"
@@ -18,10 +20,14 @@
         </a-card>
       </div>
     </div>
+    <AFooter />
   </a-layout>
+  
 </template>
 
 <script setup>
+import AHeader from '@/components/AHeader.vue';
+import AFooter from '@/components/AFooter.vue';
 import { ref, computed } from 'vue';
 import { SearchOutlined } from '@ant-design/icons-vue';
 import IMAGE from '@/Images/IMAGE.jpg';
