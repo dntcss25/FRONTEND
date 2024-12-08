@@ -1,4 +1,115 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+<template>
+    <div>
+      <!-- Loading Screen -->
+      <div v-if="isLoading" id="loading-screen" class="loading-screen">
+        <div class="spinner"></div>
+      </div>
+  
+      <CarreonHeader></CarreonHeader>
+      <!-- Main Content -->
+      <main class="main-content">
+        <section class="home">
+          <div class="home-img">
+            <img src="@/assets/ME.jpg" alt="JC's profile picture" />
+          </div>
+          <div class="home-content">
+            <h1>Hi, It's <span class="crimson">JC</span></h1>
+            <h3 class="small-text">I'm a <span class="crimson">College Student</span></h3>
+            <p>
+              Currently a 4th-year Bachelor of Science in Information Technology student, actively honing my skills and developing my expertise to become a proficient full-stack developer.
+            </p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/JC4peace" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://github.com/JCFlare" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://x.com/JhonCarlos18941" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://www.instagram.com/lars_flare/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <CarreonFooter></CarreonFooter>
+  
+    </div>
+  </template>
+  
+  <script>
+import CarreonFooter from '../components/CarreonFooter.vue';
+import CarreonHeader from '../components/CarreonHeader.vue';
+
+
+export default {
+    data() {
+  return {
+    isMenuOpen: false, // Ensure this is set to toggle the menu
+    isHome: false, 
+    isSkills: false,
+    isEducation: false,
+    isPortfolio: false,
+    isContact: false,
+  };
+},
+methods: {
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen; // Toggle menu visibility
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = this.$refs.nav;
+    const sidenav = this.$refs.sidenav;
+    
+    if (nav && sidenav) {
+      nav.classList.toggle('active');
+      sidenav.style.left = nav.classList.contains('active') ? '0' : '-150px';
+      menuToggle.classList.toggle('active');
+    }
+  },
+
+
+    addEventListeners() {
+      // Fade-out animation on link click
+      const links = document.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', event => {
+          if (link.target === "_blank") return;
+          event.preventDefault();
+          document.body.classList.add('fade-out');
+          setTimeout(() => window.location.href = link.href, 250);
+        });
+      });
+
+      // Contact form submit logic
+      const form = document.getElementById('contactForm');
+      const successMessage = document.getElementById('successMessage');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          form.classList.add('hidden');
+          successMessage.classList.add('visible');
+          setTimeout(() => {
+            successMessage.classList.remove('visible');
+            form.classList.remove('hidden');
+            form.reset();
+          }, 4000);
+        });
+      }
+
+      // Add selected class to cards on click
+      document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', () => {
+          document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
+          card.classList.add('selected');
+        });
+      });
+    },
+  },
+};
+</script>
+
+  
+  <style>
+  /* Include your styles here */
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+  /* Your custom CSS goes here */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
 :root {
     --primary-color: crimson;
@@ -196,12 +307,14 @@ nav a.active {
     font-size: 6rem;
     font-weight: 700;
     line-height: 1.3;
+    color: white;
 }
 
 .home-content h3 {
     font-size: 4rem;
     margin-bottom: 1rem;
     font-weight: 700;
+    color: white;
 }
 
 .home-content p {
@@ -396,3 +509,5 @@ form.hidden {
         font-size: 3rem;
     }
 }
+  </style>
+  
