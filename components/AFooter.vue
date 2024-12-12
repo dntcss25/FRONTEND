@@ -1,7 +1,7 @@
 <template>
     <footer>
         <div class="container">
-            <p>&copy; 2024</p>
+            <p>copyright &copy; 2024</p>
             <p>BSIT | SPIST</p>
         </div>
 
